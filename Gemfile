@@ -21,7 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'pg'
+gem 'pg', '~> 0.12.2'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'haml'
