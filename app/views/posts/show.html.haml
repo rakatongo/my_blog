@@ -1,0 +1,11 @@
+%article(class= colores)
+	.paginacion				
+		-@otros.each do |i|
+			- cycle("pull-left", "pull-right")
+			- if !i.empty?
+				= content_tag(:a,siguiente(i.first, current_cycle), {href: i.first.title, class: current_cycle })
+	= render 'single_post'
+	%section.row.comments		
+		= render @post.comments
+	%section.row.comment_form
+		= render 'comments/comment_form'

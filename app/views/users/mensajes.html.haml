@@ -1,0 +1,24 @@
+.row.mensaje
+	= will_paginate @noleidos
+	- @noleidos.each do |f|
+		.gruaper{class: colores, id: "grupo_#{f.id}"}
+			.span4.mensajes_izquierda
+				%ul
+					%li					
+						= f.name
+					%li 
+						= f.email
+				= link_to "Borrar",
+				  post_comment_path(f.post_id,f.id),remote: :true,
+				  method: :delete,confirm: "Borrar comentario?",
+				  class: "borrar_link_comment btn btn-inverse btn-small"
+				= link_to "Ver Post",
+				  post_title_path(f.post.title,anchor: "coment_header"),
+				  class: "borrar_link_comment btn btn-inverse btn-small"
+				%br
+				= link_to "Marcar como leido", comment_leido_path(f.id),
+				  class: "borrar_link_comment btn btn-inverse btn-small",
+				  method: :put, remote: :true,confirm: "Marcar comentario como leido?"
+			.span6.single_mensaje
+				%p= f.content
+	= will_paginate @noleidos, class: "pagination margin_top"

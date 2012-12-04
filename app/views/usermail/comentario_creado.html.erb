@@ -1,0 +1,7 @@
+Daniel tenes un nuevo comentario en tu blog:
+
+<h3>De: <%= @comment.email %></h3>	
+<h3><%= @comment.name %></h3>
+	<p><%= @comment.content %></p>
+
+	<%= time_tag @comment.created_at.to_date %>

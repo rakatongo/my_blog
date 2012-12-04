@@ -1,0 +1,15 @@
+- @title = "Blog Index"
+%article{class: colores}
+  %header          
+    = link_to post_title_path(post.title) do        
+      = post.title
+  .izquierda.pull-left
+    %b.icon-white.icon-time
+    = time_tag post.created_at.to_date
+  %div.derecha       
+    %p      
+      = pluralize post.comments.count, "comment"
+      %b.icon-white.icon-comment      
+  .content.formato
+    = truncate_html post.content
+    = link_to 'Read More', post_title_path(post.title)

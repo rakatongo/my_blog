@@ -1,0 +1,13 @@
+.row 
+  .span9.form_centrado
+    %fieldset#fieldseta.post
+      %legend#legenda Crea un post
+      = form_for @post do |f|    
+        = f.label :title, "Titulo"
+        = f.text_field :title, placeholder: "Escrive un titulo"
+        = f.label :content, "Contenido"
+        = f.text_area :content, placeholder: "Contenido del post..."
+        .action
+          = f.submit "Crear Post!", id: "sub_form", class: "btn-inverse"
+      
+  

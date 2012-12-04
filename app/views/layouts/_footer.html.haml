@@ -1,0 +1,14 @@
+.pull-right= link_to "Hide", '#', id: "hide_contact"
+%ul
+	%li			
+		= link_to "Contact me", '#', id: "contact_link"			
+		= form_for @contact,method: :post, html:{class: "contact_form"} do |f|
+			= f.label :name
+			= f.text_field :name, placeholder: "Your Name...",id: "contact_name"
+			= f.label :email
+			= f.text_field :email, placeholder: "Your Email...",id: "contact_email"
+			= f.label :msg, "Message"
+			= f.text_area :msg,placeholder: "Your message...",id: "contact_msg"
+			= f.submit "Send", class: "btn btn-primary btn-inverse"
+
+

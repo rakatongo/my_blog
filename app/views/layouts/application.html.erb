@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>  
+</head>
+<body>
+	<% if loged_in? %>
+		<%= render 'layouts/header' %>
+	<% end %>
+	<div class="page-header">	
+		<%= image_tag ("rails.png") %>	
+		<h1>Ruby on Rails Dev.</h1>
+	</div>
+<div class="row">
+	<% flash.each do |key, value|%>
+    	<div class="span6 offset5 alert alert-<%= key%>"><%= value %></div>
+	<% end %>
+</div>
+<div class="row">	
+	<div class="cont span10 offset3">
+		<%= yield %>		
+	</div>
+	<nav class="span4">
+		<%= render 'layouts/derecha' %>
+	</nav>
+</div>
+<footer id="foot">
+	<%= render 'layouts/footer' %>
+</footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+$('#grupo_<%= escape_javascript(@comment.id.to_s)%>').slideUp('slow',function() {	
+	$(this).remove()
+})
+$('#mensaje_cuenta').fadeToggle(500,'linear',function() {
+	$(this).text('<%= escape_javascript(@noleidos.count.to_s)%>')
+	$(this).fadeToggle()
+})

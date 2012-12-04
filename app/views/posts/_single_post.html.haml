@@ -1,0 +1,11 @@
+- @title = @post.title
+%header.show_post_header
+	%h1        
+		= @post.title      
+.izquierda.pull-left
+	%b.icon-white.icon-time
+	= time_tag @post.created_at.to_date
+%div.derecha
+	= pluralize @post.comments.count, "Comment"
+	%b.icon-white.icon-comment    
+.content.show_post_content.formato= RedCloth.new(@post.content).html_safe

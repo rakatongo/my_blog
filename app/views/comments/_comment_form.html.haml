@@ -1,0 +1,12 @@
+.span7.offset3
+  %fieldset#fieldseta
+    %legend#legenda Send a comment
+    = form_for([@post, @comment]) do |f|				
+      = f.label :email
+      = f.text_field :email, placeholder: "Email..."
+      = f.label :name		
+      = f.text_field :name, placeholder: "Your Name..."
+      = f.label :content,"Comment"
+      = f.text_area :content, placeholder: "Your Comment..."
+      .action
+        = f.submit "Enviar", class: "btn btn-inverse"

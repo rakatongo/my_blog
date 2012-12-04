@@ -1,0 +1,19 @@
+- if !comment.created_at.nil?
+	%h3#coment_header Comments
+	.wraper{id: "grupo_#{comment.id}"}
+		.span3.tiempo
+			= time_tag comment.created_at.to_date
+			- if loged_in?
+				%br
+				= link_to "Borrar",
+				 post_comment_path(comment.post_id,comment.id),
+				  method: :delete,remote: true, class: "borrar_link_comment btn btn-inverse btn-small"
+		.span7.individual_comentario{id: "comment_#{comment.id}"}
+			.head_coment
+				%span.contador.pull-right
+					\#
+					= comment_counter + 1
+				%h3			
+					= comment.name			
+			%p= comment.content			
+		

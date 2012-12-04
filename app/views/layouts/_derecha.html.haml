@@ -1,0 +1,8 @@
+= link_to root_path, id: "a_home" do
+	%b.icon-home.icon-white
+	Home
+%h4 Latest Posts
+%ul.ul_derecha
+	- @ultimos.each do |post|
+		%li.li_derecha= link_to post.title, post_title_path(post.title)
+	

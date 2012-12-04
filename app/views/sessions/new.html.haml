@@ -1,0 +1,11 @@
+.row 
+  .span6.offset2
+    %fieldset#fieldseta
+      %legend#legenda Entra RakuN!
+      = form_for(:session, url: sessions_path) do |f|	
+        = f.label :email
+        = f.text_field :email, placeholder: "Email..."
+        = f.label :password		
+        = f.password_field :password, placeholder: "Tu password"      
+        .action
+          = f.submit "Entrar", class: "btn btn-inverse"

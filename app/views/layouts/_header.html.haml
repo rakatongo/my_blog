@@ -1,0 +1,23 @@
+.navbar.navbar-inverse.navbar-fixed-top
+	.navbar-inner
+		.container
+			%a.btn.btn-navbar{:href => '#',data: {"toggle" => "collapse", "target"=> ".nav-collapse"}}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			= link_to "Rakun Blog!", root_path, class: "brand"
+			.nav-collapse.collpase
+			%ul.nav.pull-right#top_bar
+				- if @noleidos.count != 0
+					%li
+						= link_to mensajes_path do 						
+							%span.badge.badge-success#mensaje_cuenta
+								= @noleidos.count
+							Nuevos Mensajes
+				%li= link_to "Crear post", new_post_path
+				- if @post && @post.title
+					%li= link_to "Editar Post", edit_post_path(@post)
+					%li= link_to "Borrar Post", post_path(@post),confirm: "Borrar post?", method: :delete
+				%li= link_to "Log out", salir_path, method: :delete
+
+			
