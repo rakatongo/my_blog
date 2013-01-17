@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   #:domain               => "railscasts.com",
   :user_name            => "rakatongo@gmail.com",
-  :password             => "4246032",
+  :password             => "*******",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
